@@ -1,7 +1,7 @@
 # ETL-Pipeline
 How to build an ETL Pipeline with Python 
 
-Important Python basics:
+Important Python fundamentals:
 - Data Structure (List, Dictionary, Tuple and Sets)
 - Conditions statements (if...else)
 - Looping techniques (for loop and while loop)
