@@ -2,14 +2,6 @@
 How to build an ETL Pipeline with Python? 
 
 Important Python fundamentals:
-- Data Structure (List, Dictionary, Tuple and Sets)
-- Conditions statements (if...else)
-- Looping techniques (for loop and while loop)
-- Functions
-- Object-oriented Programming (OOP Python)
-- Working with files (Open, read, write, append and close)
-- Version control with Git tracking
-- Local integrated development environments IDEs (Jupyter Notebook, PyCharm)
 
 ETL Process and Data Pipelines
 - What is a data pipeline and how to create it?
