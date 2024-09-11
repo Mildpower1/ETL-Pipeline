@@ -1,7 +1,7 @@
 # ETL Pipeline
 How to build an ETL Pipeline with Python? 
 
-Important Python fundamentals:
+Important Python fundamentals
 
 ETL Process and Data Pipelines
 - What is a data pipeline and how to create it?
