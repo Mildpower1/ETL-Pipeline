@@ -1,0 +1,168 @@
+## The following Python basics should be known beforehand:
+- Data Structure (List, Dictionary, Tuple and Sets)
+- Conditions statements (if...else)
+- Looping techniques (for loop and while loop)
+- Functions
+- Object-oriented Programming (OOP Python)
+- Working with files (Open, read, write, append and close)
+- Version control with Git tracking
+- Local integrated development environments IDEs (Jupyter Notebook, PyCharm)
+
+## Libraries:
+Some of the most popular libraries of Python are:
+
+- Numpy for scientific computing
+- Pandas for data manipulation and analysis.
+- Matplotlib for visualizing data.
+- Scikit-learn to train machine learning models.
+
+And many more!
+
+## Pandas
+Pandas introduces the DataFrame class. A DataFrame is in the form of a matrix whose rows and columns each have an index. The main features of pandas are:
+
+- data recovery from files (CSV, Excel tables, etc.)
+- handling this data (deletion / addition, modification, statistical visualization, etc.)
+
+## Data Loading
+- **Read CSV file:** df = pd.read_csv('filename.csv')
+- **Read CSV with specific delimiter:** df = pd.read_csv('filename.csv', delimiter=';')
+- **Read Excel file:** df = pd.read_excel('filename.xlsx')
+- **Read from SQL Database:** df = pd.read_sql(query, connection)
+- **Chunking large files:** pd.read_csv('large_file.csv', chunksize=1000)
+- **Iterating through data chunks:** 
+	- for chunk in pd.read_csv('file.csv', chunksize=500); process(chunk)
+
+## Data Inspection
+- **Display top rows:** df.head()
+- **Display bottom rows:** df.tail()
+- **Display data type:** df.dtypes
+- **Summyry statistics:** df.describe()
+- **Display index, columns, and data:** df.info()
+
+## Data Cleaning
+- **Check for missing values:** df.isnull().sum()
+- **Fill missing values:** df.fillna(value)
+- **Drop missing values:** df.dropna()
+- **Rename columns:** df.rename(columns={'old_name': 'new_name'})
+- **Drop columns:** df.drop(columns=['collumn_name'])
+
+## Data Transformation
+- **Apply function:** df['column'].apply(lambda x: function(x))
+- **Group by and aggregate:** df.groupby('column').agg({'column': 'sum'})
+- **Group by multiple columns:** df.groupby(['col1', 'col2']).mean()
+- **Aggregate using multiple functions:** df.groupby('col').agg(['mean', 'sum'])
+- **Transform function:** df.groupby('col').transform(lambda x: x - x.mean())
+- **Pivot tables:** df.pivot_table(index='column1', values='column2', aggfunc='mean')
+- **Merge dataFrames:** pd.merge(df1, df2, on='column')
+- **SQL-like joins:** pd.merge(df1, df2, how='left', on='col')
+- **Concatenate dataFrames:** pd.concat([df1, df2])
+- **Concatenating along a different axis:** pd.concat([df1, df2], axis=1)
+- **Lambda function:** df.apply(lalmbda x: x+1)
+- **Pivot longer/wider format:** df.melt(id_vars=['col1'])
+- **Stack/Unstack:** df.stack(), df.unstack()
+- **Cross tabulations:** pd.crosstab(df['col1'], df['col2'])
+
+## Data Visualization Integration
+- **Histogram:** df['column'].hist()
+- **Boxplot:** df.boxplot(column=['column1', 'column2'])
+- **Scatter plot:** df.plot.scatter(x='col1', y='col2')
+- **Line plot:** df.plot.line()
+- **Bar chart:** df['column'].value_counts().plot.bar()
+- **Custom plotting:** 
+	- import matplotlib.pylot as plt; df.plot(); plt.show()
+ 
+- **Customize plot style:** plt.style.use('ggplot')
+- **Histogram using bins specification:** df['column'].hist(bins=20)
+- **Boxplot grouped by category:** df.boxplot(column='num_column', by='cat_column')
+
+## Statistical Analysis
+- **Correlation matrix:** df.corr()
+- **Covariance matrix:** df.cov()
+- **Value counts:** df['column'].value_counts()
+- **Unique values in column:** df['column'].unique()
+- **Number of unique values:** df['column'].nunique()
+
+## Indexing and Selection
+- **Select column:** df['column']
+- **Select multiple columns:** df[['col1', 'col2']]
+- **Select rows by position:** df.iloc[0:5]
+- **Select rows by lable:** df.loc[0:5]
+- **Conditional selection:** df[df['column']> value]
+- **Query function:** df.query('column'> value')
+- **Filtering using isin:** df[df['column'].isin([value1, value2])]
+- **Creating multiIndex:** df.set_index(['col1', 'col2'])
+- **Slicing on multiIndex:** df.loc[(slice('index1_start', 'index1_end'), slice('index2_start', 'index2_end))]
+
+## Data Formatting and Conversion
+- **Convert data types:** df['column'].astype('type')
+- **String operations:** df['column'].str.lower()
+- **Datetime conversion:** pd.to_datetime(df['column'])
+- **Setting index:** df.set_index('column')
+
+## Handling Time Series Data
+- **Set datetime index:** df.set_index(pd.to_datetime(df['date']))
+- **Resampling data:** df.resample('M').mean()
+- **Rolling window operations:** df.rolling(window=5).mean()
+
+## File Export
+- **Write to csv:** df.to_csv('filename.csv')
+- **Write to excel:** df.to_excel('filename.csv')
+- **Write to SQL Database:** df.to_sql('table_name', connection)
+
+## Data Exploration Techniques
+- **Profile report using pandas-profiling:**
+	- from pandas-profiling import profileReport; profileReport(df)
+
+- **Pairplot using seaborn:** 
+	- import seaborn as sns; sns.pairplot(df)
+  
+- **Heatmap for correlation using seaborn:**
+	- sns.heatmap(df.corr(), annot=True)
+  
+## Data Merging Techniques
+- **Outer join:** pd.merge(df1, df2, on='column', how='outer')
+- **Inner join:** pd.merge(df1, df2, on='column', how='inner')
+- **Left join:** pd.merge(df1, df2, on='column', how='left')
+- **Right join:** pd.merge(df1, df2, on='column', how='right')
+
+## Dealing using Duplicates
+- **Finding Duplicates:** df.duplicated()
+- **Removing Duplicates:** df.drop_duplicates()
+
+## Custom Operations using Apply
+- **Custom apply functions:** df.apply(lambda rom:custom_func(row['col1'], row['col2'), axis=1]
+
+## Performance Tuning
+- **Using swifter for faster apply:**
+	- import swifer; df['column'].swifter.apply(lambda x: func(x))
+  
+- **Parallel processing using dask:** 
+	- import dask.dataframe as dd; ddf= dd.from_pandas(df, npartitions=10)
+  
+## Data Normalization and Standardization
+- **Min-Max Normalization:** (df['column'] - df['column'].min()) /(df['column'].max() - df['column'].min())
+- **Z-score standardization:** (df['column'] - df['column'].mean()) /(df['column'].std()
+
+## Working with JSON and XML
+- **Reading JSON:** df = pd.read_json('filename.json')
+- **Reading XML:** df = pd.read_xml('filename.xml')
+- **Writing to JSON:** df.to_json('filename.json')
+
+## Dealing with Missing Data
+- **Interpolate missing values:** df['column'].interpolate()
+- **Forward fill missing values:** df['column'].ffill()
+- **Backward fill missing values:** df['column'].bfill()
+
+## Working with External Data Source
+- **Reading data from HTML:** dfs = pd.read_html('http://example.com')
+- **Connecting to a SQL database:**
+'''python  
+  from sqlalchemy import create_engine
+  engine = create_engine('sqlite:///db.sqlite')
+  df = pd.read_sql('SELECT * FROM tabel_name', engine)
+'''
+
+
+
+    
