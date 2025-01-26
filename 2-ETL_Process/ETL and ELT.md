@@ -22,8 +22,8 @@
     - Identify the sources of your data (e.g. databases, CSV files, APIs).
     - Connect to these sources (e.g. using SQLAlchemy for databases).
 - **Extract data:**
-    - Read the data from the sources (e.g. using Pandas for CSV files).
-    - Filter the data as needed.
+    - ***Read*** the data from the sources (e.g. using Pandas for CSV files).
+    - ***Filter*** the data as needed.
 - **Transform data:**
     - ***Clean*** the data (e.g. removing duplicates, filling missing values).
     - ***Convert*** data types.
