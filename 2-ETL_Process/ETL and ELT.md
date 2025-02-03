@@ -50,16 +50,6 @@ engine = create_engine('postgresql://user:password@host:port/database')
 df.to_sql('my_table', engine, if_exists='replace', index=False)
 df = pd.read_csv('data.csv')
 
-#Transform data
-df['Date'] = pd.to_datetime(df['Date'])
-df['amount'] = df['amount'].astype(float)
-
-#Connecting to a PostgreSQL database
-engine = create_engine('postgresql://user:password@host:port/database')
-
-#Load data into a table
-df.to_sql('my_table', engine, if_exists='replace', index=False)
-
 ```
 
 
